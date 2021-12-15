@@ -9,8 +9,8 @@ function CountriesWrapper ( {countries, allcountries} ) {
 
   const countriesCards = countries.map( item => 
     <Country 
-      countries={countries} 
-      countryID={countries.indexOf(item)} 
+      countries={allcountries} 
+      countryID={allcountries.indexOf(item)} 
       showModal={showModal}
     />
   )

@@ -53,6 +53,7 @@
 .modal-content>img {
   width: 100%;
   max-height: 40vh;
+  object-fit: contain;
 }
 
 .modal-header {
@@ -111,4 +112,24 @@
   width: 100vw;
   height: 100vh;
   position: absolute;
+}
+
+@media (min-width: 1100px) {
+  .modal-content {
+    max-width: 50rem;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 2rem;
+  }
+  .modal-content img {
+    grid-column: 1 / span 2;
+  }
+  .modal-header {
+    place-self: center;
+  }
+  .modal-header h1 {
+    font-size: 3rem;
+    margin: 0 1.5rem;
+  }
+  
 }
