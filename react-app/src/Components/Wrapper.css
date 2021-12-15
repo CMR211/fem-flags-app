@@ -1,0 +1,25 @@
+main {
+  background: var(--colorbackground);
+  max-width: var(--maxwidth);
+  margin: 3rem auto 0 auto;
+  color: var(--colortext);
+  padding: 0 2rem 3rem 2rem;
+}
+
+#searchdiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  gap: 3rem;
+}
+
+@media (max-width: 610px) {
+  #searchdiv {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+

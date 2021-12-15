@@ -1,0 +1,114 @@
+.modal-main {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  display: grid;
+  place-items: center;
+}
+
+.modal-content {
+  position: relative;
+  background: var(--colorbackground);
+  box-shadow: var(--boxshadow);
+  border-radius: 1rem;
+  z-index: 12;
+  width: 80vw;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content>button {
+  position: absolute;
+  right: 0.1rem;
+  top: 0.1rem;
+  border: none;
+  outline: none;
+  background: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1rem;
+  transform: scale(1);
+  transition: transform 100ms ease-in-out;
+  --buttoniconcolor: gray;
+  cursor: pointer;
+  color: var(--colortext);
+}
+
+.modal-content>button>svg {
+  width: 75%;
+  height: 75%;
+  color: var(--buttoniconcolor);
+}
+
+.modal-content>button:hover {
+  transform: scale(1.1);
+  --buttoniconcolor: current-color;
+}
+
+.modal-content>img {
+  width: 100%;
+  max-height: 40vh;
+}
+
+.modal-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.modal-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.modal-details-par::first-line {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-content h3 {
+  border-bottom: 2px solid var(--colorelements);
+  margin-bottom: 0.5rem;
+}
+
+.modal-borders {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  gap: 0.5rem;
+}
+
+.modal-borders>button {
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background: var(--colorelements);
+  color: var(--colortext);
+  transition: 300ms;
+}
+
+.modal-borders>button:hover {
+  background: var(--colorbackground);
+  box-shadow: var(--boxshadow);
+}
+
+.clicktohide {
+  background: transparent;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}

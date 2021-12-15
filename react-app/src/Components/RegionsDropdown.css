@@ -1,0 +1,23 @@
+
+.dropdown>button {
+  width: 13rem;
+}
+
+.dropdown-menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 13rem;
+  z-index: 1;
+}
+
+.dropdown-menu *:hover {
+  background: var(--colorbackground);
+  cursor: pointer;
+}
+
+.dropdown-menu button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
