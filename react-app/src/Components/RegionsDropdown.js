@@ -15,6 +15,7 @@ export default function RegionsDropdown ( {filterByRegion, clearFilter} ) {
     <div 
       onMouseEnter={() => setHover(true)} 
       onMouseLeave={() => setHover(false)} 
+      onClick={() => setHover(!isHover)}
       className="dropdown">
       <button className="searchbar">Filter by regions...</button>
       {!isHover ? null : (

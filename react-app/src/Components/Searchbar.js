@@ -8,6 +8,7 @@ export default function Searchbar ( {filterByName} ) {
       id="countrysearch" 
       placeholder="Search for a country..." 
       onChange={filterByName}
+      autoComplete="off"
     />
   )
 }
