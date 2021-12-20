@@ -2,7 +2,7 @@
   position: fixed;
   inset: 0;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh + 50px);
   background: rgba(0, 0, 0, 0.6);
   z-index: 10;
   display: grid;
@@ -132,4 +132,26 @@
     margin: 0 1.5rem;
   }
   
+}
+
+.anim-enter,
+.anim-appear {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all 300ms;
+}
+
+.anim-enter-active,
+.anim-appear-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.anim-exit {
+  opacity: 1;
+  transition: all 300ms;
+}
+
+.anim-exit-active {
+  opacity: 0
 }

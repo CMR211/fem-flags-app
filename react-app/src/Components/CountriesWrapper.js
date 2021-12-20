@@ -20,12 +20,6 @@ function CountriesWrapper ( {countries, allcountries} ) {
   const [isModalVisible, setIsModalVisible] = React.useState(false);
   const [modalCountryID, setModalCountryID] = React.useState(0);
 
-  const animation = useSpring({
-    opacity: isModalVisible ? '1' : '0',
-  })
-
-  const AnimatedModal = animated(Modal)
-
   function showModal (id) {
     setModalCountryID(id);
     setIsModalVisible(true);
@@ -38,14 +32,14 @@ function CountriesWrapper ( {countries, allcountries} ) {
   return (
     <div id="countries-wrapper">
       {countriesCards}
-      {isModalVisible && 
-        <AnimatedModal 
+
+      <Modal 
           modalCountryID={modalCountryID} 
           setModalCountryID={setModalCountryID}
           hideModal={hideModal} 
           countries={allcountries}
+          isModalVisible={isModalVisible}
         /> 
-      }
 
     </div>
   )
