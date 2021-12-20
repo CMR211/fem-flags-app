@@ -2,13 +2,15 @@ import React from 'react'
 import Country from './Country';
 import Modal from './Modal';
 import styles from "./CountriesWrapper.css"
+import { useSpring, animated } from 'react-spring'
 
 export default CountriesWrapper;
 
 function CountriesWrapper ( {countries, allcountries} ) {
 
-  const countriesCards = countries.map( item => 
+  const countriesCards = countries.map( (item, index) => 
     <Country 
+      key={index}
       countries={allcountries} 
       countryID={allcountries.indexOf(item)} 
       showModal={showModal}
@@ -16,7 +18,13 @@ function CountriesWrapper ( {countries, allcountries} ) {
   )
 
   const [isModalVisible, setIsModalVisible] = React.useState(false);
-  const [modalCountryID, setModalCountryID] = React.useState();
+  const [modalCountryID, setModalCountryID] = React.useState(0);
+
+  const animation = useSpring({
+    opacity: isModalVisible ? '1' : '0',
+  })
+
+  const AnimatedModal = animated(Modal)
 
   function showModal (id) {
     setModalCountryID(id);
@@ -31,13 +39,14 @@ function CountriesWrapper ( {countries, allcountries} ) {
     <div id="countries-wrapper">
       {countriesCards}
       {isModalVisible && 
-        <Modal 
+        <AnimatedModal 
           modalCountryID={modalCountryID} 
           setModalCountryID={setModalCountryID}
           hideModal={hideModal} 
           countries={allcountries}
         /> 
       }
+
     </div>
   )
 }
